@@ -76,7 +76,7 @@ def printLessons(lesson_array, show_current_only):
         current_day = 0;
         is_weekend = True;
     
-    print(current_day)
+
     for i in range(0,len(lesson_array)):
         # jesli zmienna show_current_only jest rowna true
         # wyswietla tylko najblizszy/aktualny dzien
