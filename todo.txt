@@ -1,0 +1,13 @@
+Zrobione:
+-wyświetlanie planu
+-wykrywanie aktualnego/najbliższego dnia
+-chowanie loga
+-możliwość wyświetlania tylko aktualnego/najbliższego dnia
+
+Do zrobienia:
+-godziny lekcji
+-wykrywanie aktualnej lekcji
+-wykrywanie zakończenia lekcji
+-generowanie planu lekcji w oparciu o stronę VULCANa, a nie z góry podane wartości
+-podpinanie pliku z terminami sprawdzianów
+-interfejs graficzny
