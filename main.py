@@ -7,7 +7,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Pokazuje plan lekcji',
                                     epilog='Program stworzony przez Leinnana.')
-parser.add_argument('--current', help='Pokazuje tylko aktualny/najblizszy dzien', action='store_true')
+parser.add_argument('-c', '--current', help='Pokazuje tylko aktualny/najblizszy dzien', action='store_true')
 args = parser.parse_args()
 
 print(args)
