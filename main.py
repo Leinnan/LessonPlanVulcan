@@ -7,10 +7,15 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Pokazuje plan lekcji',
                                     epilog='Program stworzony przez Leinnana.')
-parser.add_argument('-c', '--current', help='Pokazuje tylko aktualny/najblizszy dzien', action='store_true')
+parser.add_argument('-c', '--current', dest='current_only', help='Pokazuje tylko aktualny/najblizszy dzien', action='store_true')
 args = parser.parse_args()
 
-print(args)
+
+global show_current_only;
+show_current_only = parser.parse_args().current_only; 
+
+
+print(str(show_current_only))
 
 logo = """\033[1m
 
