@@ -15,7 +15,6 @@ global show_current_only;
 show_current_only = parser.parse_args().current_only; 
 
 
-print(str(show_current_only))
 
 logo = """\033[1m
 
@@ -33,4 +32,4 @@ logo = """\033[1m
 print(logo)
 
 my_lessons_array = lesson.getLessons();
-lesson.printLessons(my_lessons_array);
+lesson.printLessons(my_lessons_array, show_current_only);

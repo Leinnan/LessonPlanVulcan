@@ -65,7 +65,7 @@ def getLessons():
     return lesson_array;
 
 
-def printLessons(lesson_array):
+def printLessons(lesson_array, show_current_only):
     
     # odejmuje jeden bo pierwszy dzien ma numer 0, a nie 1
     current_day = my_time.current_time()[0] - 1;
@@ -78,6 +78,11 @@ def printLessons(lesson_array):
     
     print(current_day)
     for i in range(0,len(lesson_array)):
+        # jesli zmienna show_current_only jest rowna true
+        # wyswietla tylko najblizszy/aktualny dzien
+        if show_current_only == True and not i == current_day:
+            break;
+    
         # kontynuuje jesli pierwsza komórka 
         # w danym rzedzie ma jakakolwiek wartosc 
         if lesson_array[i][0]:
