@@ -65,7 +65,7 @@ def getLessons():
     return lesson_array;
 
 
-def printLessons(lesson_array, show_current_only):
+def printLessons(lesson_array, show_current_only, show__days_inline):
     
     # odejmuje jeden bo pierwszy dzien ma numer 0, a nie 1
     current_day = my_time.current_time()[0] - 1
@@ -76,31 +76,60 @@ def printLessons(lesson_array, show_current_only):
         current_day = 0
         is_weekend = True
     
+    current_day = 2
+    # wyswietlanie dni obok siebie start
+    if show__days_inline and not show_current_only:
+        # najpierw nazwy dni
+        for i in range(0,len(lesson_array)):
+            print('\033[94m{:^18}\033[0m'.format(
+                        str(lesson_array[i][0])), end="\t")
+            
+
+        # teraz po kolei dana godzina w kazdym dniu
+        for j in range(1,len(lesson_array[i])):
+            print("\n",end="")
+            for i in range(0,len(lesson_array)):
+                if not lesson_array[i][j]:
+                    print("{: ^18}".format("-"), end="\t")
+                else:
+                    if i == current_day:
+                        print('\033[93m{: <16}{: >2}\033[0m'.format(
+                            lesson_array[i][j].subject_name,
+                            lesson_array[i][j].number_of_class), end="\t")
+                    else:
+                        print('{: <16}{: >2}'.format(
+                            lesson_array[i][j].subject_name,
+                            lesson_array[i][j].number_of_class), end="\t")
+        print("\n",end="")
+        return 1
+    # wyswietlanie dni obok siebie end
 
     for i in range(0,len(lesson_array)):
         # jesli zmienna show_current_only jest rowna true
         # wyswietla tylko najblizszy/aktualny dzien
         if show_current_only == True and not i == current_day:
-            break
+            continue
     
         # kontynuuje jesli pierwsza komórka 
         # w danym rzedzie ma jakakolwiek wartosc 
         if lesson_array[i][0]:
-            print("\n\033[94m" + lesson_array[i][0] + "\033[0m")
+            print('\033[94m{:^18}\033[0m'.format(
+                        str(lesson_array[i][0])))
+            
+            
             for j in range(1,len(lesson_array[i])):
-                
                 # przerywamy petle 
                 # gdy trafiamy na puste komórki
                 if not lesson_array[i][j]:
-                    break
+                    continue
                     
-                lesson_array[i][j].subject_name = lesson_array[i][j].subject_name.ljust(18)
                 
                 if i == current_day:
-                    print('\033[93m{: <14}{: >2}\033[0m'.format(
+                    print('\033[93m{: <16}{: >2}\033[0m'.format(
                         lesson_array[i][j].subject_name,
                         lesson_array[i][j].number_of_class))
                 else:
-                    print('{: <14}{: >2}'.format(
+                    print('{: <16}{: >2}'.format(
                         lesson_array[i][j].subject_name,
                         lesson_array[i][j].number_of_class))
+    return 1

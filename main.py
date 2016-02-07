@@ -12,11 +12,14 @@ parser.add_argument('-c', '--current', dest='current_only',
                      action='store_true')
 parser.add_argument('-nl', '--nologo', dest='logo', 
                     help='Nie pokazuje loga', action='store_true')
+parser.add_argument('-i', '--inline', dest='inline', 
+                    help='Wyswietla dni obok siebie', action='store_true')
 args = parser.parse_args()
 
 
 show_current_only = parser.parse_args().current_only
 hide_logo = parser.parse_args().logo
+show_inline = parser.parse_args().inline
 
 
 
@@ -35,4 +38,4 @@ if hide_logo == False:
     print(logo)
 
 my_lessons_array = lesson.getLessons()
-lesson.printLessons(my_lessons_array, show_current_only)
+lesson.printLessons(my_lessons_array, show_current_only, show_inline)
