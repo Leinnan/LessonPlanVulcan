@@ -86,7 +86,7 @@ def printLessons(lesson_array, show_current_only):
         # kontynuuje jesli pierwsza komórka 
         # w danym rzedzie ma jakakolwiek wartosc 
         if lesson_array[i][0]:
-            print("\033[94m" + lesson_array[i][0] + "\033[0m")
+            print("\n\033[94m" + lesson_array[i][0] + "\033[0m")
             for j in range(1,len(lesson_array[i])):
                 
                 # przerywamy petle 
@@ -94,11 +94,13 @@ def printLessons(lesson_array, show_current_only):
                 if not lesson_array[i][j]:
                     break
                     
-                lesson_array[i][j].subject_name = lesson_array[i][j].subject_name.ljust(16)
+                lesson_array[i][j].subject_name = lesson_array[i][j].subject_name.ljust(18)
                 
                 if i == current_day:
-                    print("\033[93m" + lesson_array[i][j].subject_name +
-                        str(lesson_array[i][j].number_of_class) + "\033[0m")
+                    print('\033[93m{: <14}{: >2}\033[0m'.format(
+                        lesson_array[i][j].subject_name,
+                        lesson_array[i][j].number_of_class))
                 else:
-                    print(lesson_array[i][j].subject_name +
-                        str(lesson_array[i][j].number_of_class))
+                    print('{: <14}{: >2}'.format(
+                        lesson_array[i][j].subject_name,
+                        lesson_array[i][j].number_of_class))

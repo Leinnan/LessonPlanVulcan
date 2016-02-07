@@ -5,6 +5,7 @@ Zrobione:
 -możliwość wyświetlania tylko aktualnego/najbliższego dnia
 
 Do zrobienia:
+-wyświetlanie dni obok siebie jako opcja
 -godziny lekcji
 -wykrywanie aktualnej lekcji
 -wykrywanie zakończenia lekcji
