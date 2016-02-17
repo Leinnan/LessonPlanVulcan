@@ -76,7 +76,6 @@ def printLessons(lesson_array, show_current_only, show__days_inline):
         current_day = 0
         is_weekend = True
     
-    current_day = 2
     # wyswietlanie dni obok siebie start
     if show__days_inline and not show_current_only:
         # najpierw nazwy dni
