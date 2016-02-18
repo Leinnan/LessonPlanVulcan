@@ -68,11 +68,11 @@ def getLessons():
 def printLessons(lesson_array, show_current_only, show__days_inline):
     
     # odejmuje jeden bo pierwszy dzien ma numer 0, a nie 1
-    current_day = my_time.current_time()[0] - 1
+    current_day = my_time.current_time()[0]
     is_weekend = False
     
     # po piatku najblizszy jest poniedzialek
-    if current_day > 4:
+    if current_day > 5:
         current_day = 0
         is_weekend = True
     
