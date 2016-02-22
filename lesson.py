@@ -23,7 +23,6 @@ def getLessons():
     lesson_array[0][5] = lesson(38,"informatyka")
     lesson_array[0][6] = lesson(29,"j. angielski")
     lesson_array[0][7] = lesson(29,"j. angielski")
-    lesson_array[0][8] = lesson(1,"religia")
 
     # wtorek
     lesson_array[1][0] = "Wtorek"
@@ -42,7 +41,7 @@ def getLessons():
     lesson_array[2][3] = lesson(11,"j. polski")
     lesson_array[2][4] = lesson(19,"informatyka")
     lesson_array[2][5] = lesson(19,"informatyka")
-    lesson_array[2][6] = lesson(19,"informatyka")
+    lesson_array[2][6] = lesson(29,"j. angielski")
 
     # czwartek
     lesson_array[3][0] = "Czwartek"
@@ -60,7 +59,8 @@ def getLessons():
     lesson_array[4][3] = lesson(16,"matematyka")
     lesson_array[4][4] = lesson(16,"matematyka")
     lesson_array[4][5] = lesson(11,"j. polski")
-    lesson_array[4][6] = lesson(19,"j. angielski")
+    lesson_array[4][6] = lesson(38,"informatyka")
+    lesson_array[4][7] = lesson(1,"religia")
     
     return lesson_array;
 
