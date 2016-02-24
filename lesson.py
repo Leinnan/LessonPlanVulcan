@@ -71,6 +71,10 @@ def printLessons(lesson_array, show_current_only, show__days_inline):
     current_day = my_time.current_time()[0]
     is_weekend = False
     
+    # jesli jest po 15 to ustawia jako aktualny dzien nastepny
+    if my_time.current_time()[1] > 15:
+        current_day += 1
+    
     # po piatku najblizszy jest poniedzialek
     if current_day > 5:
         current_day = 0
